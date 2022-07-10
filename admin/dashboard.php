@@ -79,7 +79,7 @@
                 <div class="row">
                     <div class="col-7 align-self-center">
                        <!-- <?php include 'includes/greetings-a.php'?> -->
-                       <h2 style="color:#8971ea;font-weight: bold">WELCOME ADMIN</h2>
+                       <h4 style="color:#8971ea;font-weight: bold">WELCOME ADMIN</h4>
                         <div class="d-flex align-items-center">
                             <!-- <nav aria-label="breadcrumb">
                                 
