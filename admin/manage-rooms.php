@@ -112,7 +112,7 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                            <a href="add-rooms.php"><button type="button" class="btn btn-block btn-md btn-success">Add New Room Details</button></a>
+                            <a href="add-rooms.php"><button type="button" class="btn btn-success btn-sm">Add New Room Details</button></a>
                             <hr>
                                 <div class="table-responsive">
                                     <table id="zero_config" class="table table-striped table-hover table-bordered no-wrap">

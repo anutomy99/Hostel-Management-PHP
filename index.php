@@ -103,6 +103,7 @@
 
                             <!-- <img src="assets/images/big/icon.png" alt="wrapkit"> -->
                         </div>
+
                         <h2 style="color:black;  font-size:20px; font-weight:bold" class="mt-3 text-center " >STUDENT LOGIN</h2>
                         
                         <form class="mt-4" method="POST">
@@ -142,16 +143,16 @@
         
     </div>
     <!-- <div class="vertical"></div> -->
-    <div class="contact">
-        <u><h4 style="font-size:22px" >Contact Details</h4></u>
-        <i class="fa fa-address-card " style="font-size:18px;color:rgb(182, 53, 53)">Address: 
+    <div class="contact"><hr>
+        <h4 style="font-size:22px ;color:#97266a" ><u>Contact Details</u></h4>
+        <i class="fa fa-address-card " style="font-size:18px;color:#97266a">Address: 
              TJ Archade Opposite Donbosco College<br>
-            Angadikadavu<br>
+            Angadikadavu P O<br>
             Iritty<br>
             670706<br></i>
-            <i class="fa fa-phone" style="font-size:18px;color:rgb(182, 53, 53)">
+            <i class="fa fa-phone" style="font-size:18px;color:#97266a">
             Phone no: 9605406866</i><br>
-            <i class="fa fa-envelope" style="font-size:18px;color:rgb(182, 53, 53)">Email: tjarchade@gmail.com</i>
+            <i class="fa fa-envelope" style="font-size:18px;color:#97266a">Email: tjarchade@gmail.com</i><hr>
 
     </div>
     </div>

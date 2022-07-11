@@ -16,14 +16,16 @@
     $feespm=$_POST['fpm'];
     $stayfrom=$_POST['stayf'];
     $duration=$_POST['duration'];
-
-    $query="INSERT into userregistration(regNo,firstName,lastName,course,contactNo,email,password,room,fpm,stayf,duration) values(?,?,?,?,?,?,?,?,?,?,?)";
+    $pname=$_POST['pname'];
+    $pcontact=$_POST['pcontact'];
+    $paddress=$_POST['paddress'];
+    $query="INSERT into userregistration(regNo,firstName,lastName,course,contactNo,email,password,room,fpm,stayf,duration,pname,pcontact,paddress) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
     $query1="UPDATE rooms set occupiedbed=occupiedbed+1 where room_no=$roomno";
     // $query2="SELECT count(regNo) as counte from userregistration where regNo=$regno";
     $stmt=$mysqli->prepare($query);
     $stmt1=$mysqli->prepare($query1);
     // $stmt2=$mysqli->prepare($query2);
-    $rc=$stmt->bind_param('ssssissiiss',$regno,$fname,$lname,$course,$contactno,$emailid,$password,$roomno,$feespm,$stayfrom,$duration);
+    $rc=$stmt->bind_param('ssssissiisssis',$regno,$fname,$lname,$course,$contactno,$emailid,$password,$roomno,$feespm,$stayfrom,$duration,$pname,$pcontact,$paddress);
     // $stmt2->execute();
     // $res=$stmt2->get_result();
     // $count=0;
@@ -83,6 +85,9 @@
     <link href="../assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="../dist/css/style.min.css" rel="stylesheet">
+    <link href="../dist/css/style.minn.css" rel="stylesheet">
+
+    <link href="../dist/css/style.css" rel="stylesheet">
 
     <script type="text/javascript">
     function valid(){
@@ -142,19 +147,7 @@
             <!-- ============================================================== -->
             <!-- Bread crumb and right sidebar toggle -->
             <!-- ============================================================== -->
-            <div class="page-breadcrumb">
-                <div class="row">
-                    <div class="col-7 align-self-center">
-                    <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">Student Registration Form</h4>
-                        <div class="d-flex align-items-center">
-                            <!-- <nav aria-label="breadcrumb">
-                                
-                            </nav> -->
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
+            
             <!-- ============================================================== -->
             <!-- End Bread crumb and right sidebar toggle -->
             <!-- ============================================================== -->
@@ -164,65 +157,60 @@
             <div class="container-fluid">
 
                 <form method="POST" name="registration" onSubmit="return valid();">
+                <div class="mx-1 py-3 px-3 mx-ns-4 bg-gradient-maroon">
+               </div>
+                     <div class="row justify-content-center" style="margin-top:-2em;">
+	                     <div class="col-lg-11 col-md-11 col-sm-12 col-xs-12">
+		                    <div class="card rounded-0 shadow">
+			                    <div class="card-body">
+				                   <div class="container-fzluid">
+                <!-- <form method="POST" name="registration" onSubmit="return valid();"> -->
 
-                    <div class="row">
+					<!-- <form action="" id="student-form"> -->
+							<div class="row">
+								<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+									<div class="form-group">
+			                        <img src="TJ1.png">							
+									</div>
+								</div>
+							</div>
+							
+						
+						<fieldset class="border-bottom">
+							<u><legend>Student Details</legend></u>
+							<div class="row">
+                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+									<div class="form-group">
+										<label for="Register number" class="control-label">Register Number</label>
+                                        <input type="text" name="regno" id="regno" class="form-control" required>
 
+									</div>
+								</div>
+								
+								<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+									<div class="form-group">
+										<label for="firstname" class="control-label">First Name</label>
+                                        <input type="text" name="fname" id="fname" required class="form-control">
 
+                                    </div>
+								</div>
+								
+								<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+									<div class="form-group">
+										<label for="lastname" class="control-label">Last Name</label>
+                                        <input type="text" name="lname" id="lname" required class="form-control">
 
-                        <div class="col-sm-12 col-md-6 col-lg-4">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h4 class="card-title">Registration Number</h4>
-                                        <div class="form-group">
-                                            <input type="text" name="regno" placeholder="Enter Registration Number" id="regno" class="form-control" required>
-                                        </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
+									</div>
+								</div>
+							</div>
 
-
-
-                        <div class="col-sm-12 col-md-6 col-lg-4">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h4 class="card-title">First Name</h4>
-                                        <div class="form-group">
-                                            <input type="text" name="fname" id="fname" placeholder="Enter First Name" required class="form-control">
-                                        </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <!-- <div class="col-sm-12 col-md-6 col-lg-4">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h4 class="card-title">Middle Name</h4>
-                                        <div class="form-group">
-                                            <input type="text" name="mname" id="mname" placeholder="Enter Middle Name" required class="form-control">
-                                        </div>
-                                </div>
-                            </div>
-                        </div> -->
-
-
-                        <div class="col-sm-12 col-md-6 col-lg-4">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h4 class="card-title">Last Name</h4>
-                                        <div class="form-group">
-                                            <input type="text" name="lname" id="lname" placeholder="Enter Last Name" required class="form-control">
-                                        </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-6 col-lg-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">Course</h4>
-                                    <div class="form-group mb-4">
-                                        <select class="custom-select mr-sm-2" name="course" id="course" onChange="getSeater(this.value);" onBlur="checkAvailability()" required id="inlineFormCustomSelect">
+                            
+							
+							<div class="row">
+								<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+									<div class="form-group">
+										<label for="course" class="control-label">Course</label>
+										<select class="custom-select mr-sm-2" name="course" id="course" onChange="getSeater(this.value);" onBlur="checkAvailability()" required id="inlineFormCustomSelect">
                                             <option selected>Select...</option>
                                             <?php $query ="SELECT * FROM courses";
                                             $stmt2 = $mysqli->prepare($query);
@@ -235,87 +223,41 @@
                                             <?php } ?>
                                         </select>
                                         <span id="room-availability-status" style="font-size:12px;"></span>
-                                    </div>
-                              
-                            </div>
-                        </div>
-                    </div>
+									</div>
+								</div>
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+									<div class="form-group">
+										<label for="contact" class="control-label">Course Duration</label>
+                                        <select class="custom-select mr-sm-2" id="duration" name="duration">
+                                            <option selected>Choose...</option>
+                                            <option value="3">3 Year</option>
+                                            <option value="2">2 Year</option>
+                                            
+                                        </select>
+									</div>
+								</div>
+								<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+									<div class="form-group">
+										<label for="contact" class="control-label">Contact #</label>
+                                        <input type="number" name="contact" id="contact" class="form-control">
 
+									</div>
+								</div>
+								
+							</div>
 
-                        <!-- <div class="col-sm-12 col-md-6 col-lg-4">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h4 class="card-title">Gender</h4>
-                                        <div class="form-group mb-4">
-                                            <select class="custom-select mr-sm-2" id="gender" name="gender" required="required">
-                                                <option selected>Choose...</option>
-                                                <option value="Male">Male</option>
-                                                <option value="Female">Female</option>
-                                                <option value="Others">Others</option>
-                                            </select>
-                                        </div>
-                                </div>
-                            </div>
-                        </div> -->
-
-
-                        <div class="col-sm-12 col-md-6 col-lg-4">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h4 class="card-title">Contact Number</h4>
-                                        <div class="form-group">
-                                            <input type="number" name="contact" id="contact" placeholder="Enter Contact Number" required="required" class="form-control">
-                                        </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-
-                        <div class="col-sm-12 col-md-6 col-lg-4">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h4 class="card-title">Email ID</h4>
-                                        <div class="form-group">
-                                            <input type="email" name="email" id="email" placeholder="Enter Email" onBlur="checkAvailability()" required="required" class="form-control">
+                               
+                            <div class="row">
+                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+									<div class="form-group">
+										<label for="email" class="control-label">Email</label>
+                                        <input type="email" name="email" id="email"  onBlur="checkAvailability()" required="required" class="form-control">
                                             <span id="user-availability-status" style="font-size:12px;"></span>
-                                           
-                                        </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="col-sm-12 col-md-6 col-lg-4">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h4 class="card-title">Password</h4>
-                                        <div class="form-group">
-                                            <input type="password" name="password" id="password" placeholder="Enter Password" required="required" class="form-control">
-                                        
-                                        
-                                        </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="col-sm-12 col-md-6 col-lg-4">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h4 class="card-title">Confirm Password</h4>
-                                        <div class="form-group">
-                                            <input type="password" name="cpassword" id="cpassword" placeholder="Confirmation Password" required="required" class="form-control">
-                                        </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-12 col-md-6 col-lg-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">Room Number</h4>
-                                    <div class="form-group mb-4">
+									</div>
+								</div>
+                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+									<div class="form-group">
+										<label for="Register number" class="control-label">Room Number</label>
                                         <select class="custom-select mr-sm-2" name="room" id="room" onChange="getSeater(this.value);" onBlur="checkAvailability()" required id="inlineFormCustomSelect">
                                             <option selected>Select...</option>
                                             <?php $query ="SELECT * FROM rooms where occupiedbed!=seater";
@@ -328,79 +270,85 @@
                                             <option value="<?php echo $row->room_no;?>"> <?php echo $row->room_no;?></option>
                                             <?php } ?>
                                         </select>
-                                        <span id="room-availability-status" style="font-size:12px;"></span>
-                                    </div>
-                              
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-12 col-md-6 col-lg-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">Total Fees Per Month</h4>
-                                    <div class="form-group">
-                                        <input type="text" name="fpm" id="fpm" placeholder="Your total fees" class="form-control">
-                                    </div>
-                            </div>
-                        </div>
-                    </div>
- 
-                    <div class="col-sm-12 col-md-6 col-lg-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">Start Date</h4>
-                                    <div class="form-group">
+									</div>
+								</div>
+								
+								<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+									<div class="form-group">
+										<label for="firstname" class="control-label">Staying from</label>
                                         <input type="date" name="stayf" id="stayf" class="form-control" required>
-                                    </div>
-                                
+
+									</div>
+								</div>
                             </div>
-                        </div>
-                    </div>
+                            <div class="row">
 
-                    <div class="col-sm-12 col-md-6 col-lg-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">Total Duration</h4>
-                                    <div class="form-group mb-4">
-                                        <select class="custom-select mr-sm-2" id="duration" name="duration">
-                                            <option selected>Choose...</option>
-                                            <option value="1">3 Year</option>
-                                            <option value="2">2 Year</option>
-                                            <!-- <option value="3">Three Month</option>
-                                            <option value="4">Four Month</option>
-                                            <option value="5">Five Month</option>
-                                            <option value="6">Six Month</option>
-                                            <option value="7">Seven Month</option>
-                                            <option value="8">Eight Month</option>
-                                            <option value="9">Nine Month</option>
-                                            <option value="10">Ten Month</option>
-                                            <option value="11">Eleven Month</option>
-                                            <option value="12">Twelve Month</option> -->
-                                        </select>
-                                    </div>
-                              
-                            </div>
-                        </div>
+								<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+									<div class="form-group">
+										<label for="lastname" class="control-label">Total Fee Per Month</label>
+                                        <input type="text" name="fpm" id="fpm"  class="form-control">
 
-                        
-                    </div>
-                   
+									</div>
+								</div>
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+									<div class="form-group">
+										<label for="lastname" class="control-label">Password </label>
+                                        <input type="password" name="password" id="password"  required="required" class="form-control">
 
-                   
-                
-                                            </div>
-                        <div class="form-actions">
-                            <div class="text-center">
-                                <button type="submit" name="submit" class="btn btn-success">Register</button>
-                                <button type="reset" class="btn btn-danger">Reset</button>
-                            </div>
-                        </div>
-                
-                </form>
+									</div>
+								</div>
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+									<div class="form-group">
+										<label for="lastname" class="control-label">Confirm Password</label>
+                                        <input type="password" name="cpassword" id="cpassword" required="required" class="form-control">
+
+									</div>
+								</div>
+							</div>
+                           
+						</fieldset>
+						<fieldset class="border-bottom">
+							<u><legend>Parent Details</legend></u>
+							<div class="row">
+								<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+									<div class="form-group">
+										<label for="emergency_name" class="control-label">Name</label>
+                                        <input type="text" name="pname" id="pname" required class="form-control">
+
+									</div>
+								</div>
+								<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+									<div class="form-group">
+										<label for="emergency_contact" class="control-label">Contact #</label>
+                                        <input type="text" name="pcontact" id="Pcontact"  required class="form-control">
+
+									</div>
+								</div>
+							
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+									<div class="form-group">
+										<label for="emergency_address" class="control-label">Address</label>
+										<textarea rows="3" name="paddress" id="paddress" class="form-control form-control-sm rounded-0" required><?= isset($emergency_address) ? $emergency_address : '' ?></textarea>
+									</div>
+								</div>
+							</div>
+						</fieldset>
+						
+					</form>
+				</div>
+			</div>	
+			<div class="card-footer py-1 text-center">
+            <button type="submit" name="submit" class="btn btn-success">Register</button>
+            <button type="reset" class="btn btn-danger">Reset</button>
+			</div>
+		</div>	
+	</div>	
+</div>	
+</form>
 
 
-            </div>
+            
+            
             <!-- ============================================================== -->
             <!-- End Container fluid  -->
             <!-- ============================================================== -->

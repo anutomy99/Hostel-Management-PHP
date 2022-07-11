@@ -35,13 +35,15 @@
         aria-expanded="false"><i class="fas fa-graduation-cap" style="color:#97266a"></i><span
         class="hide-menu">Manage Courses</span></a></li>
          
+        
+        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="manage-payment.php"
+        aria-expanded="false"><i class="fa fa-credit-card" style="color:#97266a"></i><span
+        class="hide-menu">Payments</span></a></li>
+        
         <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="view-complaints.php"
         aria-expanded="false"><i class="fas fa-comments" style="color:#97266a"></i></i><span
         class="hide-menu">View Complaints</span></a></li>
 
-        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="manage-payment.php"
-        aria-expanded="false"><i class="fa fa-credit-card" style="color:#97266a"></i><span
-        class="hide-menu">Payments</span></a></li>
                            
     </ul>
 </nav>

@@ -36,6 +36,8 @@
      <link href="../assets/extra-libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="../dist/css/style.min.css" rel="stylesheet">
+    <link href="../dist/css/style.css" rel="stylesheet">
+
 
 </head>
 
@@ -111,11 +113,11 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                            <a href="add-payment.php"><button type="button" class="btn btn-block btn-md btn-success">Add Payments</button></a>
+                            <a href="add-payment.php"><button type="button" class="btn btn-success btn-sm">Add Payments</button></a>
                             <hr>
                                 <div class="table-responsive">
                                     <table id="zero_config" class="table table-striped table-hover table-bordered no-wrap">
-                                    <thead class="thead-dark">
+                                    <thead class="thead-dark" >
                                             <tr>
                                                 <th>#</th>
                                                 <th>Name</th>

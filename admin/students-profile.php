@@ -110,7 +110,6 @@
                     
                     
                     <div class="col-7 align-self-center">
-                    <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">Student Details</h4>
                         <div class="d-flex align-items-center">
                             <!-- <nav aria-label="breadcrumb">
                                 
@@ -139,11 +138,23 @@
                     <div class="table-responsive">
                     
                            <div id="print">
-                     
-                                  <table id="zctb" class="table table-striped table-bordered no-wrap">
+                         
+                           <div class="Print-contact">
+                           <img src="Tj1.png" class="logo"><br><br>
+                           <i class="fa fa-address-card " style="font-size:15px;color:#97266a">Address: 
+                              TJ Archade Opposite Donbosco College<br>
+                               Angadikadavu P O<br>
+                               Iritty<br>
+                               670706<br></i>
+                            <i class="fa fa-phone" style="font-size:15px;color:#97266a">
+                                 Phone no: 9605406866</i><br>
+                             <i class="fa fa-envelope" style="font-size:15px;color:#97266a">Email: tjarchade@gmail.com</i><hr>
 
-                                      <tbody>
+                             </div>
+                          
+                                      <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">Student Details</h4>
 
+                                       <hr>
                                       <?php	
                                       
                                       $id=$_GET['id'];
@@ -158,28 +169,18 @@
                                               ?>
                                         
 
-                                          <!-- <tr>
-                                              <td colspan="3"><b>Date & Time of Registration: <?php echo $row->postingDate;?></b></td>
-                                              
-                                          </tr> -->
                                           
-                                           
-                                          <tr>
-                                          <td><b>Registration Number :</b></td>
-                                          <td><?php echo $row->regNo;?></td>
-                                          <td><b>Full Name :</b></td>
-                                          <td><?php echo $row->firstName;?><?php echo $row->lastName;?></td>
-                                          <td><b>Email Address:</b></td>
+                                          <b>Date & Time of Registration:</b> <?php echo $row->regDate;?><br>
+                                              
                                          
-                                          <td><?php echo $row->email;?></td>
-                                          </tr>
-                                          <tr>
-                                          <td><b>Contact Number :</b></td>
-                                          <td><?php echo $row->contactNo;?></td>
-                                          <td><b>Room no :</b></td>
-                                          <td><?php echo $row->room;?></td>
-                                          <td><b>Course:</b></td>
-                                          <td><?php echo $row->course;?></td>
+                                          <b>Registration Number :</b>  <?php echo $row->regNo;?><br>
+
+                                          <b>Full Name :</b> <?php echo $row->firstName;?> <?php echo $row->lastName;?><br>
+                                          <b>Email Address:</b><?php echo $row->email;?><br>
+                                          
+                                          <b>Contact Number :</b><?php echo $row->contactNo;?><br>
+                                          <b>Room no :</b><?php echo $row->room;?><br>
+                                          <b>Course:</b><?php echo $row->course;?><br>
 
                                           <!-- <td><b>Starting Date :</b></td>
                                           <td><?php echo $row->stayf;?></td> -->
@@ -228,20 +229,18 @@
                                           <!-- <td><b>Seater :</b></td>
                                           <td><?php echo $row->seater;?></td> -->
 
-
-                                          </tr>
-
-                                          <tr>
-
-                                          <td><b>Duration:</b></td>
-                                          <td><?php echo $dr=$row->duration;?> Year</td>
-                                          <td><b>Fees Per Month :</b></td>
-                                          <td><?php echo $fpm=$row->fpm;?></td>
-                                          <td><b>Starting Date :</b></td>
-                                          <td><?php echo $row->stayf;?></td>
+                                          <b>Duration:</b><?php echo $dr=$row->duration;?> Year <br>
+                                          <b>Fees Per Month :</b><?php echo $fpm=$row->fpm;?><br>
+                                          <b>Staying from:</b><?php echo $row->stayf;?><br><br>
                                           
+                            <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">Parent Details</h4>
 
-                                    </tr>
+                            <hr>
+                                    
+                            <b>Parent Name:</b> <?php echo $row->pname;?><br>
+                            <b>Parent Contact Number:</b> <?php echo $row->pcontact;?><br>
+                            <b>Parent Address:</b> <?php echo $row->paddress;?><br>
+
 
                                           <!-- <td><b>Food Status:</b></td>
                                           <td>
@@ -274,9 +273,8 @@
 
 
                                           <?php } ?>
+                                          
 
-                                      </tbody>
-                                  </table>
                                 
                                         </div>
                                         
@@ -284,14 +282,13 @@
                               </div>
                                       
      
-                                           
-                                        
+                                
                     
                     </div>
 
                  
                  </div>
-               
+              
                
                </div>
 
