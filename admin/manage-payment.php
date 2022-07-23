@@ -88,7 +88,7 @@
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-7 align-self-center">
-                    <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">Payment Management</h4>
+                    <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">Payment Details</h4>
                         <div class="d-flex align-items-center">
                             <!-- <nav aria-label="breadcrumb">
                                 
@@ -113,7 +113,6 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                            <a href="add-payment.php"><button type="button" class="btn btn-success btn-sm">Add Payments</button></a>
                             <hr>
                                 <div class="table-responsive">
                                     <table id="zero_config" class="table table-striped table-hover table-bordered no-wrap">
@@ -123,6 +122,8 @@
                                                 <th>Name</th>
                                                 <th>Mess Fee</th>
                                                 <th>Room Rent</th>
+                                                <th>Due Amount</th>
+
                                                 <th>Payment Date</th>
 
                                                 <!-- <th>Published On</th> -->
@@ -145,12 +146,16 @@
                                         <td><?php echo $row->name;?></td>
                                         <td><?php echo $row->messfee;?></td>
                                         <td><?php echo $row->roomrent;?></td>
+                                        <td><?php echo $row->dueamount;?></td>
+
                                         <td><?php echo $row->paymentdate;?></td>
 
-                                        <td><a href="edit-payment.php?id=<?php echo $row->id;?>" title="Edit"><button type="button" class="btn btn-secondary">Edit</button>
-</a>&nbsp;&nbsp;
-                                        <a href="manage-payment.php?del=<?php echo $row->id;?>" title="Delete" onclick="return confirm("Do you want to delete");"><button type="button" class="btn btn-danger">Delete</button>
-</a></td>
+                                           
+                                        <td>
+                                        <a href="payments-details.php?id=<?php echo $row->id;?>" title="View Full Details"><button type="button"class="btn btn-primary btn-sm">Receipt</button></a>&nbsp;&nbsp;
+
+                                        <a href="edit-payment.php?id=<?php echo $row->id;?>" title="Edit"><button type="button" class="btn btn-secondary btn-sm">Edit</button></a>&nbsp;&nbsp;
+                                        <a href="manage-payment.php?del=<?php echo $row->id;?>" title="Delete" onclick="return confirm("Do you want to delete");"><button type="button" class="btn btn-danger btn-sm">Delete</button></a></td>
                                         </tr>
                                             <?php
                                                 $cnt=$cnt+1;

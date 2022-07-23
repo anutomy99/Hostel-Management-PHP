@@ -172,7 +172,7 @@
 
                         <div class="form-actions">
                             <div class="text-center">
-                                <button type="submit" name="submit" class="btn btn-success">Insert</button>
+                            <button type="submit" name="submit" class="btn btn-success">Insert</button>
                                 <button type="reset" class="btn btn-danger">Reset</button>
                             </div>
                         </div>

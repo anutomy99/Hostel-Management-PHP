@@ -28,7 +28,7 @@
     <meta name="author" content="">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/icon.png">
-    <title>TJ Archade Hostel Management System</title>
+    <title>Hostel Management System</title>
     <!-- Custom CSS -->
     <link href="../assets/extra-libs/c3/c3.min.css" rel="stylesheet">
     <link href="../assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
@@ -36,6 +36,8 @@
      <link href="../assets/extra-libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="../dist/css/style.min.css" rel="stylesheet">
+    <link href="../dist/css/style.css" rel="stylesheet">
+
 
 </head>
 
@@ -111,11 +113,11 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                            <a href="student-add-payment.php"><button type="button" class="btn btn-block btn-md btn-success">Add Payments</button></a>
+                            <a href="add-payment.php"><button type="button" class="btn btn-success btn-sm">Add Payments</button></a>
                             <hr>
                                 <div class="table-responsive">
                                     <table id="zero_config" class="table table-striped table-hover table-bordered no-wrap">
-                                    <thead class="thead-dark">
+                                    <thead class="thead-dark" >
                                             <tr>
                                                 <th>#</th>
                                                 <th>Name</th>
@@ -145,8 +147,10 @@
                                         <td><?php echo $row->roomrent;?></td>
                                         <td><?php echo $row->paymentdate;?></td>
 
-                                        <td><a href="edit-payment.php?id=<?php echo $row->id;?>" title="Edit"><i class="icon-note"></i></a>&nbsp;&nbsp;
-                                        <a href="manage-payment.php?del=<?php echo $row->id;?>" title="Delete" onclick="return confirm("Do you want to delete");"><i class="icon-close" style="color:red;"></i></a></td>
+                                        <td><a href="edit-payment.php?id=<?php echo $row->id;?>" title="Edit"><button type="button" class="btn btn-secondary">Edit</button>
+</a>&nbsp;&nbsp;
+                                        <a href="manage-payment.php?del=<?php echo $row->id;?>" title="Delete" onclick="return confirm("Do you want to delete");"><button type="button" class="btn btn-danger">Delete</button>
+</a></td>
                                         </tr>
                                             <?php
                                                 $cnt=$cnt+1;

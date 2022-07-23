@@ -18,9 +18,9 @@
         class="hide-menu">View My Complaints</span></a></li>
 
 
-        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="student-manage-payment.php"
+        <!-- <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="student-manage-payment.php"
         aria-expanded="false"><i class="fa fa-credit-card" style="color:#97266a"></i><span
-        class="hide-menu">Payments</span></a></li>
+        class="hide-menu">Payments</span></a></li> -->
                            
     </ul>
 </nav>

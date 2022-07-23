@@ -227,7 +227,7 @@
 								</div>
                                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
 									<div class="form-group">
-										<label for="contact" class="control-label">Course Duration</label>
+										<label for="course" class="control-label">Course Duration</label>
                                         <select class="custom-select mr-sm-2" id="duration" name="duration">
                                             <option selected>Choose...</option>
                                             <option value="3">3 Year</option>
@@ -257,7 +257,7 @@
 								</div>
                             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
 									<div class="form-group">
-										<label for="Register number" class="control-label">Room Number</label>
+										<label for="Room number" class="control-label">Room Number</label>
                                         <select class="custom-select mr-sm-2" name="room" id="room" onChange="getSeater(this.value);" onBlur="checkAvailability()" required id="inlineFormCustomSelect">
                                             <option selected>Select...</option>
                                             <?php $query ="SELECT * FROM rooms where occupiedbed!=seater";
@@ -275,7 +275,7 @@
 								
 								<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
 									<div class="form-group">
-										<label for="firstname" class="control-label">Staying from</label>
+										<label for="staingfrm" class="control-label">Staying from</label>
                                         <input type="date" name="stayf" id="stayf" class="form-control" required>
 
 									</div>
@@ -285,21 +285,21 @@
 
 								<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
 									<div class="form-group">
-										<label for="lastname" class="control-label">Total Fee Per Month</label>
+										<label for="tfpm" class="control-label">Total Fee Per Month</label>
                                         <input type="text" name="fpm" id="fpm"  class="form-control">
 
 									</div>
 								</div>
                                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
 									<div class="form-group">
-										<label for="lastname" class="control-label">Password </label>
+										<label for="password" class="control-label">Password </label>
                                         <input type="password" name="password" id="password"  required="required" class="form-control">
 
 									</div>
 								</div>
                                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
 									<div class="form-group">
-										<label for="lastname" class="control-label">Confirm Password</label>
+										<label for="cpassword" class="control-label">Confirm Password</label>
                                         <input type="password" name="cpassword" id="cpassword" required="required" class="form-control">
 
 									</div>
@@ -312,14 +312,14 @@
 							<div class="row">
 								<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
 									<div class="form-group">
-										<label for="emergency_name" class="control-label">Name</label>
+										<label for="parent name" class="control-label">Name</label>
                                         <input type="text" name="pname" id="pname" required class="form-control">
 
 									</div>
 								</div>
 								<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
 									<div class="form-group">
-										<label for="emergency_contact" class="control-label">Contact #</label>
+										<label for="parent contact" class="control-label">Contact #</label>
                                         <input type="text" name="pcontact" id="Pcontact"  required class="form-control">
 
 									</div>
@@ -327,7 +327,7 @@
 							
 								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 									<div class="form-group">
-										<label for="emergency_address" class="control-label">Address</label>
+										<label for="parent address" class="control-label">Address</label>
 										<textarea rows="3" name="paddress" id="paddress" class="form-control form-control-sm rounded-0" required><?= isset($emergency_address) ? $emergency_address : '' ?></textarea>
 									</div>
 								</div>

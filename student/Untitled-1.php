@@ -135,7 +135,7 @@
                                         <tbody>
                                         <?php	
                                         $aid=$_SESSION['id'];
-                                        $ret="SELECT * from complaint where id='$aid'";
+                                        $ret="SELECT * from complaint";
                                         $stmt= $mysqli->prepare($ret) ;
                                         $stmt->execute() ;//ok
                                         $res=$stmt->get_result();
@@ -146,7 +146,7 @@
                                         <tr><td><?php echo $cnt;;?></td>
                                         
                                         <td><?php echo $row->complaint;?></td>
-                                            <td><?php echo $row->cdate;?></td>
+                                        <td><?php echo $row->cdate;?></td>
 
 
                                         <td>

@@ -27,7 +27,7 @@
     <meta name="author" content="">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/icon.png">
-    <title>TJ Archade Hostel Management System</title>
+    <title>Hostel Management System</title>
     <!-- Custom CSS -->
     <link href="../assets/extra-libs/c3/c3.min.css" rel="stylesheet">
     <link href="../assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
@@ -35,6 +35,7 @@
      <link href="../assets/extra-libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="../dist/css/style.min.css" rel="stylesheet">
+    <link href="../dist/css/style.css" rel="stylesheet">
 
     <script language="javascript" type="text/javascript">
     var popUpWin=0;
@@ -67,7 +68,7 @@
         <!-- Topbar header - style you can find in pages.scss -->
         <!-- ============================================================== -->
         <header class="topbar" data-navbarbg="skin6">
-            <?php include 'includes/student-navigation.php'?>
+            <?php include 'includes/navigation.php'?>
         </header>
         <!-- ============================================================== -->
         <!-- End Topbar header -->
@@ -78,7 +79,7 @@
         <aside class="left-sidebar" data-sidebarbg="skin6">
             <!-- Sidebar scroll-->
             <div class="scroll-sidebar" data-sidebarbg="skin6">
-                <?php include 'includes/student-sidebar.php'?>
+                <?php include 'includes/sidebar.php'?>
             </div>
             <!-- End Sidebar scroll-->
         </aside>
@@ -95,7 +96,7 @@
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-7 align-self-center">
-                    <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">Hostel Student Management</h4>
+                    <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">complaints</h4>
                         <div class="d-flex align-items-center">
                             <!-- <nav aria-label="breadcrumb">
                                 
@@ -124,10 +125,12 @@
                                     <thead class="thead-dark">
                                             <tr>
                                                 <th>#</th>
-                                                
-                                                
+                                                <th>Name</th>
+                                                <!-- <th>Email ID</th>
+                                                <th>Contact No</th>
+
+                                                <th>Complaint Date</th> -->
                                                 <th>Complaint</th>
-                                                <th>Complaint Date</th>
 
                                                 <th>Actions</th>
                                             </tr>
@@ -135,23 +138,28 @@
                                         <tbody>
                                         <?php	
                                         $aid=$_SESSION['id'];
-                                        $ret="SELECT * from complaint where id='$aid'";
+                                        $ret="SELECT complaint,name from complaint  INNER JOIN userregistration ON complaint.uid=userregistration.id where userregistration.id='$_SESSION[id]'";
                                         $stmt= $mysqli->prepare($ret) ;
                                         $stmt->execute() ;//ok
                                         $res=$stmt->get_result();
                                         $cnt=1;
                                         while($row=$res->fetch_object())
                                             {
+                                                
                                                 ?>
-                                        <tr><td><?php echo $cnt;;?></td>
+                                        <!-- <tr><td><?php echo $cnt;;?></td> -->
+                                       <td><?php echo $row->name;?></td>
+                                        <!-- <td><?php echo $row->email;?></td>
+                                        <td><?php echo $row->contactno;?></td> -->
+                                        <!-- <td><?php echo $row->complaintdate;?></td> -->
                                         
                                         <td><?php echo $row->complaint;?></td>
-                                            <td><?php echo $row->cdate;?></td>
-
 
                                         <td>
                                         &nbsp;&nbsp;
-                                        <a href="view-student-complaint.php?del=<?php echo $row->id;?>" title="Delete Record" onclick="return confirm("Do you want to delete");"><button type="button" class="btn btn-danger">Delete</button></a></td>
+                                        <a href="view-complaints.php?del=<?php echo $row->id;?>" title="Delete Record" onclick="return confirm("Do you want to delete");"><button type="button" class="btn btn-danger">Delete</button>
+
+</a></td>
                                         </tr>
                                             <?php
                                         $cnt=$cnt+1;

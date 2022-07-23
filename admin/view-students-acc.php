@@ -172,9 +172,10 @@
                                         <tr><td><?php echo $cnt;;?></td>
                                         <td><?php echo $row->regNo;?></td>
                                         <td><?php echo $row->firstName;?>    <?php echo $row->lastName;?></td>
-                                        <td><?php echo $row->course;?></td>
+                                       
 
                                         <td><?php echo $row->room;?></td>
+                                        <td><?php echo $row->course;?></td>
                                         <td><?php echo $row->stayf;?></td>
                                         <td><?php echo $row->contactNo;?></td>
                                         <td><?php echo $row->email;?></td>
@@ -183,8 +184,9 @@
                                         <!-- <button type="button"class="btn btn-primary">View</button>
                                         <button type="button" class="btn btn-danger">Delete</button> -->
 
-                                        <a href="students-profile.php?id=<?php echo $row->id;?>" title="View Full Details"><button type="button"class="btn btn-primary">View</button></a>&nbsp;&nbsp;
-                                        <a href="view-students-acc.php?del=<?php echo $row->id;?>" title="Delete Record" onclick="<?php $delid=$row->room ?> return confirm("Do you want to delete");"><button type="button" class="btn btn-danger">Delete</button></a></td>
+                                        <a href="students-profile.php?id=<?php echo $row->id;?>" title="View Full Details"><button type="button"class="btn btn-primary btn-sm">View</button></a>&nbsp;&nbsp;
+                                        <a href="view-students-acc.php?del=<?php echo $row->id;?>" title="Delete Record" onclick="<?php $delid=$row->room ?> return confirm("Do you want to delete");"><button type="button" class="btn btn-danger btn-sm">Delete</button></a>
+                                        <a href="add-payment.php?id=<?php echo $row->id;?>" title="View Full Details"><button type="button"class="btn btn-success btn-sm">Payment</button></a>&nbsp;&nbsp;</td>
 
                                         <!-- <a href="students-profile.php?id=<?php echo $row->id;?>" title="View Full Details"><i class="icon-size-fullscreen"></i></a>&nbsp;&nbsp; -->
                                         <!-- <a href="view-students-acc.php?del=<?php echo $row->id;?>" title="Delete Record" onclick="return confirm("Do you want to delete");"><i class="icon-close" style="color:red;"></i></a></td> -->

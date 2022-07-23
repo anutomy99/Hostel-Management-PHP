@@ -5,14 +5,18 @@
     check_login();
 
     if(isset($_GET['del'])) {
-        $id=intval($_GET['del']);
+        $aid=$_SESSION['id'];
+        //$id=intval($_GET['del']);
         $adn="DELETE from complaint where id=?";
             $stmt= $mysqli->prepare($adn);
-            $stmt->bind_param('i',$id);
+            $stmt->bind_param('i',$aid);
             $stmt->execute();
             $stmt->close();	   
             echo "<script>alert('Record has been deleted');</script>" ;
     }
+    $aid=$_SESSION['id'];
+    $sql =  "SELECT userregistration.firstName,lastName,complaint.complaint,cdate FROM userregistration ,complaint WHERE userregistration.id = complaint.id";
+    $result=$mysqli->query($sql);
 ?>
 
 <!DOCTYPE html>
@@ -126,11 +130,12 @@
                                             <tr>
                                                 <th>#</th>
                                                 <th>Name</th>
-                                                <th>Email ID</th>
-                                                <th>Contact No</th>
+                                                <!-- <th>Email ID</th> -->
+                                                <!-- <th>Contact No</th> -->
 
-                                                <th>Complaint Date</th>
+                                                
                                                 <th>Complaint</th>
+                                                <th>Complaint Date</th>
 
                                                 <th>Actions</th>
                                             </tr>
@@ -138,27 +143,21 @@
                                         <tbody>
                                         <?php	
                                         $aid=$_SESSION['id'];
-                                        $ret="SELECT * from complaint";
-                                        $stmt= $mysqli->prepare($ret) ;
-                                        $stmt->execute() ;//ok
-                                        $res=$stmt->get_result();
-                                        $cnt=1;
-                                        while($row=$res->fetch_object())
+                                         $cnt=1;
+                                        while($row=mysqli_fetch_assoc($result))
                                             {
-                                                ?>
+                                        ?>
                                         <tr><td><?php echo $cnt;;?></td>
-                                        <td><?php echo $row->name;?></td>
-                                        <td><?php echo $row->email;?></td>
-                                        <td><?php echo $row->contactno;?></td>
-                                        <td><?php echo $row->complaintdate;?></td>
+                                       <td><?php echo $row['firstName'];?>   <?php echo $row['lastName'];?></td>
                                         
-                                        <td><?php echo $row->complaint;?></td>
+                                        <td><?php echo $row['complaint'];?></td>
+                                        <td><?php echo $row['cdate'];?></td>
 
+                                        
+                                        <!-- &nbsp;&nbsp; -->
                                         <td>
                                         &nbsp;&nbsp;
-                                        <a href="view-complaints.php?del=<?php echo $row->id;?>" title="Delete Record" onclick="return confirm("Do you want to delete");"><button type="button" class="btn btn-danger">Delete</button>
-
-</a></td>
+                                        <a href="view-complaints.php?del=<?php echo $row[$aid];?>" title="Delete Record" onclick="return confirm('Do you want to delete');"><button type="button" class="btn btn-danger">Delete</button></a></td>
                                         </tr>
                                             <?php
                                         $cnt=$cnt+1;

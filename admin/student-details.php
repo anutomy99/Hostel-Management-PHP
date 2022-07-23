@@ -168,110 +168,81 @@
                                          {
                                               ?>
                                         
-
-                                          
-                                          <b>Date & Time of Registration:</b> <?php echo $row->regDate;?><br>
-                                              
-                                         
-                                          <b>Registration Number :</b>  <?php echo $row->regNo;?><br>
-
-                                          <b>Student Name :</b> <?php echo $row->firstName;?> <?php echo $row->lastName;?><br>
-                                          <b>Email Address:</b><?php echo $row->email;?><br>
-                                          
-                                          <b>Contact Number :</b><?php echo $row->contactNo;?><br>
-                                          <b>Room no :</b><?php echo $row->room;?><br>
-                                          <b>Course:</b><?php echo $row->course;?><br>
-
-                                          <!-- <td><b>Starting Date :</b></td>
-                                          <td><?php echo $row->stayf;?></td> -->
-                                          
-                                          </tr>
-                                          <!-- <td><b>Selected Course :</b></td>
-                                          <td><?php echo $row->course;?></td> -->
-                                          </tr>
-
-
-                                          <!-- <tr>
-                                          <td><b>Emergency Contact No. :</b></td>
-                                          <td><?php echo $row->egycontactno;?></td>
-                                          <td><b>Guardian Name :</b></td>
-                                          <td><?php echo $row->guardianName;?></td>
-                                          <td><b>Guardian Relation :</b></td>
-                                          <td><?php echo $row->guardianRelation;?></td>
-                                          </tr>
-
-                                          <tr>
-                                          <td><b>Guardian Contact No. :</b></td>
-                                          <td colspan="6"><?php echo $row->guardianContactno;?></td>
-                                          </tr>
-
-                                          <tr>
-                                          <td><b>Current Address:</b></td>
-                                          <td colspan="2">
-                                          <?php echo $row->corresAddress;?><br />
-                                          <?php echo $row->corresCIty;?>, <?php echo $row->corresPincode;?><br />
-                                          <?php echo $row->corresState;?>
-
-
-                                          </td>
-                                          <td><b>Permanent Address:</b></td>
-                                          <td colspan="2">
-                                          <?php echo $row->pmntAddress;?><br />
-                                          <?php echo $row->pmntCity;?>, <?php echo $row->pmntPincode;?><br />	
-
-                                          </td>
-                                          </tr>
-
-                                          <tr> -->
-
-                                          
-
-                                          <!-- <td><b>Seater :</b></td>
-                                          <td><?php echo $row->seater;?></td> -->
-
-                                          <b>Duration:</b><?php echo $dr=$row->duration;?> Year <br>
-                                          <b>Fees Per Month :</b><?php echo $fpm=$row->fpm;?><br>
-                                          <b>Staying from:</b><?php echo $row->stayf;?><br><br>
-                                          
-                            <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">Parent Details</h4>
-
-                            <hr>
-                                    
-                            <b>Parent Name:</b> <?php echo $row->pname;?><br>
-                            <b>Parent Contact Number:</b> <?php echo $row->pcontact;?><br>
-                            <b>Parent Address:</b> <?php echo $row->paddress;?><br>
-
-
-                                          <!-- <td><b>Food Status:</b></td>
-                                          <td>
-                                          <?php if($row->foodstatus==0){
-                                          echo "Not Required";
-                                          } else {
-                                          echo "Required";
-                                          }
-                                          ;?> </td> -->
-
-                                          
-
-                                          
-
-                                          </tr>
-
-                                          <!-- <tr>
-                                          <td colspan="6"><b>Total Fees (<?php echo ($dr).' months'?>) : 
-                                          <?php if($row->foodstatus==1){ 
-                                          $fd=211; 
-                                          echo '$'.(($fd+$fpm)*$dr);
-                                          } else {
-                                          echo '$'.$dr*$fpm;
-                                          }
-                                          ?></b></td>
-                                          </tr> --> 
-                                         
-                                       
-
-
-
+                                        <fieldset class="border-bottom">
+                        <legend>Personal Information</legend>
+                        <div class="row">             
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                                    <label for="name" class="control-label">Register Number</label>
+                                    <div class="pl-3"><?php echo $row->regNo;?></div>
+                                </div>
+                                 <div class="form-group">
+                                    <label for="name" class="control-label">Name</label>
+                                    <div class="pl-3"><?php echo isset($name) ? $name : ''; ?></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <label for="gender" class="control-label">Gender</label>
+                                    <div class="pl-3"><?php echo isset($gender) ? $gender : ''; ?></div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <label for="contact" class="control-label">Contact #</label>
+                                    <div class="pl-3"><?php echo isset($contact) ? $contact : ''; ?></div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <label for="email" class="control-label">Email</label>
+                                    <div class="pl-3"><?php echo isset($email) ? $email : ''; ?></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <label for="address" class="control-label">Address</label>
+                                    <div class="pl-3"><?php echo isset($address) ? $address : ''; ?></div>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset class="border-bottom">
+                        <legend>Emergency Details</legend>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <label for="emergency_name" class="control-label">Name</label>
+                                    <div class="pl-3"><?php echo isset($emergency_name) ? $emergency_name : ''; ?></div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <label for="emergency_contact" class="control-label">Contact #</label>
+                                    <div class="pl-3"><?php echo isset($emergency_contact) ? $emergency_contact : ''; ?></div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <label for="emergency_relation" class="control-label">Relation</label>
+                                    <div class="pl-3"><?php echo isset($emergency_relation) ? $emergency_relation : ''; ?></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <label for="emergency_address" class="control-label">Address</label>
+                                    <div class="pl-3"><?php echo isset($emergency_address) ? $emergency_address : ''; ?></div>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                                      
                                           <?php } ?>
                                           
 

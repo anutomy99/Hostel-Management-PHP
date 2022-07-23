@@ -17,7 +17,7 @@
     <meta name="author" content="">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/icon.png">
-    <title>TJ Archade Hostel Management System</title>
+    <title>Hostel Management System</title>
     <!-- Custom CSS -->
     <link href="../assets/extra-libs/c3/c3.min.css" rel="stylesheet">
     <link href="../assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
@@ -152,13 +152,13 @@
 
                              </div>
                           
-                                      <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">Student Details</h4>
+                                      <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">Payment Details</h4>
 
                                        <hr>
                                        <?php	
                                       
                                         $id=$_GET['id'];
-                                        $ret="SELECT * from userregistration where id=?";
+                                        $ret="SELECT * from payment where id=?";
                                         $stmt= $mysqli->prepare($ret) ;
                                         $stmt->bind_param('i',$id);
                                         $stmt->execute() ;//ok
@@ -170,17 +170,16 @@
                                         
 
                                           
-                                          <b>Date & Time of Registration:</b> <?php echo $row->regDate;?><br>
+                                          <b>Nameb :</b> <?php echo $row->name;?><br><br>
                                               
                                          
-                                          <b>Registration Number :</b>  <?php echo $row->regNo;?><br>
+                                          <b>Mess Fee :</b>  <?php echo $row->messfee;?><br><br>
 
-                                          <b>Student Name :</b> <?php echo $row->firstName;?> <?php echo $row->lastName;?><br>
-                                          <b>Email Address:</b><?php echo $row->email;?><br>
+                                          <b>Room Rent :</b> <?php echo $row->roomrent;?><br><br>
+                                          <b>Due Amount :</b><?php echo $row->dueamount ;?><br><br>
                                           
-                                          <b>Contact Number :</b><?php echo $row->contactNo;?><br>
-                                          <b>Room no :</b><?php echo $row->room;?><br>
-                                          <b>Course:</b><?php echo $row->course;?><br>
+                                          <b>Payment Date :</b><?php echo $row->paymentdate;?><br>
+
 
                                           <!-- <td><b>Starting Date :</b></td>
                                           <td><?php echo $row->stayf;?></td> -->
@@ -229,18 +228,18 @@
                                           <!-- <td><b>Seater :</b></td>
                                           <td><?php echo $row->seater;?></td> -->
 
-                                          <b>Duration:</b><?php echo $dr=$row->duration;?> Year <br>
+                                          <!-- <b>Duration:</b><?php echo $dr=$row->duration;?> Year <br>
                                           <b>Fees Per Month :</b><?php echo $fpm=$row->fpm;?><br>
                                           <b>Staying from:</b><?php echo $row->stayf;?><br><br>
-                                          
-                            <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">Parent Details</h4>
+                                           -->
+                            <!-- <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">Parent Details</h4> -->
 
                             <hr>
                                     
-                            <b>Parent Name:</b> <?php echo $row->pname;?><br>
+                            <!-- <b>Parent Name:</b> <?php echo $row->pname;?><br>
                             <b>Parent Contact Number:</b> <?php echo $row->pcontact;?><br>
                             <b>Parent Address:</b> <?php echo $row->paddress;?><br>
-
+ -->
 
                                           <!-- <td><b>Food Status:</b></td>
                                           <td>

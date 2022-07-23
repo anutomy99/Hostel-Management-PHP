@@ -146,9 +146,9 @@
                                         <td><?php echo $row->course_code;?></td>
                                         <!-- <td><?php echo $row->posting_date;?></td> -->
 
-                                        <td><a href="edit-courses.php?id=<?php echo $row->id;?>" title="Edit"><button type="button" class="btn btn-secondary">Edit</button>
+                                        <td><a href="edit-courses.php?id=<?php echo $row->id;?>" title="Edit"><button type="button" class="btn btn-secondary btn-sm">Edit</button>
 </a>&nbsp;&nbsp;
-                                        <a href="manage-courses.php?del=<?php echo $row->id;?>" title="Delete" onclick="return confirm("Do you want to delete");"><button type="button" class="btn btn-danger">Delete</button>
+                                        <a href="manage-courses.php?del=<?php echo $row->id;?>" title="Delete" onclick="return confirm("Do you want to delete");"><button type="button" class="btn btn-danger btn-sm">Delete</button>
 </a></td>
                                         </tr>
                                             <?php

@@ -1429,7 +1429,7 @@ pre {
 
     .table .thead-dark th {
       color: #fff;
-      background-color:#030303;
+      background-color:#585656;
       border-color: #ffffff; }
 
 .table .thead-light th {
@@ -3014,7 +3014,7 @@ input[type="button"].btn-block {
   vertical-align: middle;
   /* background: url(../../assets/images/custom-select.png) no-repeat right 0.75rem center/8px 10px; */
   background-color: #fff;
-  border: 1px solid black;
+  border: 1px solid #c9bdbd;
   border-radius: 2px;
   appearance: none; }
   .custom-select:focus {

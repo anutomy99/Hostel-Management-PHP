@@ -17,7 +17,7 @@
     <meta name="author" content="">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/icon.png">
-    <title>TJ Archade Hostel Management System</title>
+    <title>Hostel Management System</title>
     <!-- Custom CSS -->
     <link href="../assets/extra-libs/c3/c3.min.css" rel="stylesheet">
     <link href="../assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
@@ -139,26 +139,13 @@
                     
                            <div id="print">
                          
-                           <div class="Print-contact">
-                           <img src="Tj1.png" class="logo"><br><br>
-                           <i class="fa fa-address-card " style="font-size:15px;color:#97266a">Address: 
-                              TJ Archade Opposite Donbosco College<br>
-                               Angadikadavu P O<br>
-                               Iritty<br>
-                               670706<br></i>
-                            <i class="fa fa-phone" style="font-size:15px;color:#97266a">
-                                 Phone no: 9605406866</i><br>
-                             <i class="fa fa-envelope" style="font-size:15px;color:#97266a">Email: tjarchade@gmail.com</i><hr>
-
-                             </div>
-                          
-                                      <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">Student Details</h4>
+                                      <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">Payment Details</h4>
 
                                        <hr>
                                        <?php	
                                       
                                         $id=$_GET['id'];
-                                        $ret="SELECT * from userregistration where id=?";
+                                        $ret="SELECT * from payment where id=?";
                                         $stmt= $mysqli->prepare($ret) ;
                                         $stmt->bind_param('i',$id);
                                         $stmt->execute() ;//ok
@@ -169,109 +156,117 @@
                                               ?>
                                         
 
-                                          
-                                          <b>Date & Time of Registration:</b> <?php echo $row->regDate;?><br>
-                                              
-                                         
-                                          <b>Registration Number :</b>  <?php echo $row->regNo;?><br>
-
-                                          <b>Student Name :</b> <?php echo $row->firstName;?> <?php echo $row->lastName;?><br>
-                                          <b>Email Address:</b><?php echo $row->email;?><br>
-                                          
-                                          <b>Contact Number :</b><?php echo $row->contactNo;?><br>
-                                          <b>Room no :</b><?php echo $row->room;?><br>
-                                          <b>Course:</b><?php echo $row->course;?><br>
-
-                                          <!-- <td><b>Starting Date :</b></td>
-                                          <td><?php echo $row->stayf;?></td> -->
-                                          
-                                          </tr>
-                                          <!-- <td><b>Selected Course :</b></td>
-                                          <td><?php echo $row->course;?></td> -->
-                                          </tr>
-
-
-                                          <!-- <tr>
-                                          <td><b>Emergency Contact No. :</b></td>
-                                          <td><?php echo $row->egycontactno;?></td>
-                                          <td><b>Guardian Name :</b></td>
-                                          <td><?php echo $row->guardianName;?></td>
-                                          <td><b>Guardian Relation :</b></td>
-                                          <td><?php echo $row->guardianRelation;?></td>
-                                          </tr>
-
-                                          <tr>
-                                          <td><b>Guardian Contact No. :</b></td>
-                                          <td colspan="6"><?php echo $row->guardianContactno;?></td>
-                                          </tr>
-
-                                          <tr>
-                                          <td><b>Current Address:</b></td>
-                                          <td colspan="2">
-                                          <?php echo $row->corresAddress;?><br />
-                                          <?php echo $row->corresCIty;?>, <?php echo $row->corresPincode;?><br />
-                                          <?php echo $row->corresState;?>
-
-
-                                          </td>
-                                          <td><b>Permanent Address:</b></td>
-                                          <td colspan="2">
-                                          <?php echo $row->pmntAddress;?><br />
-                                          <?php echo $row->pmntCity;?>, <?php echo $row->pmntPincode;?><br />	
-
-                                          </td>
-                                          </tr>
-
-                                          <tr> -->
-
-                                          
-
-                                          <!-- <td><b>Seater :</b></td>
-                                          <td><?php echo $row->seater;?></td> -->
-
-                                          <b>Duration:</b><?php echo $dr=$row->duration;?> Year <br>
-                                          <b>Fees Per Month :</b><?php echo $fpm=$row->fpm;?><br>
-                                          <b>Staying from:</b><?php echo $row->stayf;?><br><br>
-                                          
-                            <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">Parent Details</h4>
-
-                            <hr>
+                                        <div class="container bootdey">
+<div class="row invoice row-printable">
+    <div class="col-md-10">
+        <!-- col-lg-12 start here -->
+        <div class="panel panel-default plain" id="dash_0">
+            <!-- Start .panel -->
+            <div class="panel-body p30">
+                <div class="row">
+                    <!-- Start .row -->
+                    <div class="col-lg-6">
+                        <!-- col-lg-6 start here -->
+                        <div class="invoice-logo"><img src="Tj1.png" class="logo"></div>
+                    </div>
+                    <!-- col-lg-6 end here -->
+                    <div class="col-lg-6">
+                        <!-- col-lg-6 start here -->
+                        <div class="invoice-from">
+                            <ul class="list-unstyled text-right">
+                            <i class="fa fa-address-card " style="font-size:15px;color:#97266a">Address: 
+                              TJ Archade Opposite Donbosco College<br>
+                               Angadikadavu P O<br>
+                               Iritty<br>
+                               670706<br></i>
+                            <i class="fa fa-phone" style="font-size:15px;color:#97266a">
+                                 Phone no: 9605406866</i><br>
+                             <i class="fa fa-envelope" style="font-size:15px;color:#97266a">Email: tjarchade@gmail.com</i><hr>
+                                <!-- <li><i class="fa fa-address-card ">Address: 
+                              TJ Archade Opposite Donbosco College</i></li>
+                                <li style="font-family: 'Font Awesome 5 Free';font-weight: 900"> Angadikadavu P O</li>
+                                <li style="font-family: 'Font Awesome 5 Free';font-weight: 900">Iritty</li>
+                                <li style="font-family: 'Font Awesome 5 Free';font-weight: 900">670706</li> -->
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- col-lg-6 end here -->
+                    <div class="col-lg-12">
+                        <!-- col-lg-12 start here -->
+                        <div class="invoice-details mt25">
+                            <div class="well">
+                                
+                            </div>
+                        </div>
+                        <div class="invoice-to mt25">
+                            <ul class="list-unstyled">
+                                <!-- <li><strong>Invoiced To</strong></li> -->
+                                
+                                <p style="font-family: 'Font Awesome 5 Free';font-weight: 900"> <?php echo $row->name;?></p>
+                                <p style="font-family: 'Font Awesome 5 Free';font-weight: 900">Payment Date: <?php echo $row->paymentdate;?></p>
+                                <!-- <li>New York, NY, 2014</li>
+                                <li>USA</li> -->
+                            </ul>
+                        </div>
+                        <div class="invoice-items">
+                            <div class="table-responsive" style="overflow: hidden; outline: none;" tabindex="0">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th class="per70 text-center">Description</th>
+                                            <th class="per25 text-center">Total</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Mess Fee</td>
+                                            <td class="text-center"><?php echo $row->messfee;?></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Room rent</td>
+                                            <td class="text-center"><?php echo $row->roomrent;?></td>
+                                        </tr>
+                                        <!-- <tr>
+                                            <td>Due Amount</td>
+                                            <td class="text-center"><?php echo $row->dueamount ;?></td>
+                                        </tr> -->
+                                        
+                                    </tbody>
                                     
-                            <b>Parent Name:</b> <?php echo $row->pname;?><br>
-                            <b>Parent Contact Number:</b> <?php echo $row->pcontact;?><br>
-                            <b>Parent Address:</b> <?php echo $row->paddress;?><br>
-
-
-                                          <!-- <td><b>Food Status:</b></td>
-                                          <td>
-                                          <?php if($row->foodstatus==0){
-                                          echo "Not Required";
-                                          } else {
-                                          echo "Required";
-                                          }
-                                          ;?> </td> -->
-
-                                          
-
-                                          
-
-                                          </tr>
-
-                                          <!-- <tr>
-                                          <td colspan="6"><b>Total Fees (<?php echo ($dr).' months'?>) : 
-                                          <?php if($row->foodstatus==1){ 
-                                          $fd=211; 
-                                          echo '$'.(($fd+$fpm)*$dr);
-                                          } else {
-                                          echo '$'.$dr*$fpm;
-                                          }
-                                          ?></b></td>
-                                          </tr> --> 
-                                         
+                                    
+                                   
+                                    <tfoot>
+                                        <tr>
+                                            <th colspan="2" class="text-center">Sub Total:
+                                            <?php
+                                            $x=$row->messfee;
+                                            $y=$row->roomrent;
+                                            $s=$x+$y;
+                                            echo $s;
+                                     
+                                    ?>
+                                    </th>
+                                            
+                                        </tr>
                                        
-
-
-
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="invoice-footer mt25">
+                            <p class="text-right">Signature: </p>
+                        </div>
+                    </div>
+                    <!-- col-lg-12 end here -->
+                </div>
+                <!-- End .row -->
+            </div>
+        </div>
+        <!-- End .panel -->
+    </div>
+    <!-- col-lg-12 end here -->
+</div>
+</div>
                                           <?php } ?>
                                           
 
@@ -294,8 +289,7 @@
 
               <!-- Table column end -->
                               
-
-              <input class="btn1" type="button" value="Print" onClick="printDiv()">
+              <button class="btn1"  onClick="printDiv()" type="button"class="btn btn-success btn-sm"><i class="fa fa-print mr5"></i>Print</button>
               <a href="view-students-acc.php"><input class="btn2" type="button" value="Back"></a>
 
 

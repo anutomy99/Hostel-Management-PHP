@@ -8,6 +8,7 @@
         $name=$_POST['name'];
         $messfee=$_POST['messfee'];
         $roomrent=$_POST['roomrent'];
+        $dueamount=$_POST['dueamount'];
         $paymentdate=$_POST['paymentdate'];
         $pimage=$_POST['pimage'];
 
@@ -20,9 +21,9 @@
         // if($row_cnt>0){
         //     echo"<script>alert('Room already exist!');</script>";
         // } else {
-            $query="INSERT into  payment (name,messfee,roomrent,paymentdate,pimage) values(?,?,?,?,?)";
+            $query="INSERT into  payment (name,messfee,roomrent,dueamount,paymentdate,pimage) values(?,?,?,?,?,?)";
             $stmt = $mysqli->prepare($query);
-            $rc=$stmt->bind_param('siiss',$name,$messfee,$roomrent,$paymentdate,$pimage);
+            $rc=$stmt->bind_param('siiiss',$name,$messfee,$roomrent,$dueamount,$paymentdate,$pimage);
             $stmt->execute();
                 echo"<script>alert('Payment Sucessfull');</script>";
         }
@@ -213,6 +214,18 @@
                                 </div>
                             </div>
                         </div>
+                        
+                        <div class="col-sm-12 col-md-6 col-lg-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">Due Amount</h4>
+                                        <div class="form-group">
+                                            <input type="dueamount" name="dueamount" id="roomrent" placeholder="Enter Room Rent" required="required" class="form-control">
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+
 
                         <div class="col-sm-12 col-md-6 col-lg-4">
                         <div class="card">
@@ -270,7 +283,7 @@
                    
                         <div class="form-actions">
                             <div class="text-center">
-                                <button type="submit" name="submit" class="btn btn-success">Insert</button>
+                                <button type="submit" name="submit" class="btn btn-success">Submit</button>
                                 <button type="reset" class="btn btn-danger">Reset</button>
                             </div>
                         </div>

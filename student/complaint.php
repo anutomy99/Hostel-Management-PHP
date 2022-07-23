@@ -5,10 +5,11 @@
     check_login();
 
     if(isset($_POST['submit'])){
-        $name=$_POST['name'];
-        $emailid=$_POST['email'];
-        $contactno=$_POST['contactno'];
-        $complaintdate=$_POST['complaintdate'];
+        // $name=$_POST['name'];
+        // $emailid=$_POST['email'];
+        // $contactno=$_POST['contactno'];
+        $cdate=date('y-m-d', time());;
+
         $complaint=$_POST['complaint'];
 
         // $sql="SELECT payment FROM rooms where id=?";
@@ -20,9 +21,9 @@
         // if($row_cnt>0){
         //     echo"<script>alert('Room already exist!');</script>";
         // } else {
-            $query="INSERT into  complaint (name,email,contactno,complaintdate,complaint) values(?,?,?,?,?)";
+            $query="INSERT into  complaint (id,complaint,cdate) values(?,?,?)";
             $stmt = $mysqli->prepare($query);
-            $rc=$stmt->bind_param('ssiss',$name,$emailid,$contactno,$complaintdate,$complaint);
+            $stmt->bind_param('iss',$_SESSION['id'],$complaint,$cdate);
             $stmt->execute();
                 echo"<script>alert('Complaint registered successfully');</script>";
         }
@@ -135,7 +136,7 @@
                                 </div>
                             </div>
                         </div>  -->
-                    <div class="col-sm-12 col-md-6 col-lg-4">
+                    <!-- <div class="col-sm-12 col-md-6 col-lg-4">
                             <div class="card">
                                 <div class="card-body">
                                     <h4 class="card-title">Name</h4>
@@ -145,7 +146,7 @@
                                 </div>
                             </div>
                         </div>
-
+ -->
 
                         <!-- <div class="col-sm-12 col-md-6 col-lg-4">
                         <div class="card">
@@ -192,7 +193,7 @@
                             </div>
                         </div> -->
 
-                        <div class="col-sm-12 col-md-6 col-lg-4">
+                        <!-- <div class="col-sm-12 col-md-6 col-lg-4">
                             <div class="card">
                                 <div class="card-body">
                                     <h4 class="card-title">Email ID</h4>
@@ -201,9 +202,9 @@
                                         </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
 
-                        <div class="col-sm-12 col-md-6 col-lg-4">
+                        <!-- <div class="col-sm-12 col-md-6 col-lg-4">
                             <div class="card">
                                 <div class="card-body">
                                     <h4 class="card-title">Contact No</h4>
@@ -212,9 +213,9 @@
                                         </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
 
-                        <div class="col-sm-12 col-md-6 col-lg-4">
+                        <!-- <div class="col-sm-12 col-md-6 col-lg-4">
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title">complaint Date</h4>
@@ -224,7 +225,7 @@
                                 
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                     <div class="col-sm-12 col-md-6 col-lg-6">
                         <div class="card">
@@ -256,7 +257,7 @@
                    
                         <div class="form-actions">
                             <div class="text-center">
-                                <button type="submit" name="submit" class="btn btn-success">Insert</button>
+                                <button type="submit" name="submit" class="btn btn-success">Submit</button>
                                 <button type="reset" class="btn btn-danger">Reset</button>
                             </div>
                         </div>

@@ -143,9 +143,9 @@
                                         <td><?php echo $row->seater;?></td>
                                         <td><?php echo $row->fees;?></td>
                                         <!-- <td><?php echo $row->posting_date;?></td> -->
-                                        <td><a href="edit-room.php?id=<?php echo $row->id;?>" title="Edit"><button type="button" class="btn btn-secondary">Edit</button>
+                                        <td><a href="edit-room.php?id=<?php echo $row->id;?>" title="Edit"><button type="button" class="btn btn-secondary btn-sm">Edit</button>
 </a>&nbsp;&nbsp;
-                                        <a href="manage-rooms.php?del=<?php echo $row->id;?>" title="Delete" onclick="return confirm("Do you want to delete");"><button type="button" class="btn btn-danger">Delete</button>
+                                        <a href="manage-rooms.php?del=<?php echo $row->id;?>" title="Delete" onclick="return confirm("Do you want to delete");"><button type="button" class="btn btn-danger btn-sm">Delete</button>
 </a></td>
                                         </tr>
                                             <?php

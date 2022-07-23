@@ -62,7 +62,7 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false">
-                                <img src="https://www.pngitem.com/pimgs/m/274-2748802_transparent-tech-support-icon-png-admin-login-images.png" alt="user" class="rounded-circle"
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpWH_oULAf1vzGwKbvLJIgrlH0AU_HjvKd1g&usqp=CAU" alt="user" class="rounded-circle"
                                     width="35">
                                 
                                     <?php	
